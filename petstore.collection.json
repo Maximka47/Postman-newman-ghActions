@@ -85,13 +85,13 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/pet/:petId",
+                  "raw": "{{baseUrl}}/pet/{{petId}}",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
                     "pet",
-                    ":petId"
+                    "{{petId}}"
                   ],
                   "variable": [
                     {
@@ -126,13 +126,13 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/pet/:petId",
+                  "raw": "{{baseUrl}}/pet/{{petId}}",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
                     "pet",
-                    ":petId"
+                    "{{petId}}"
                   ],
                   "variable": [
                     {
@@ -167,13 +167,13 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/pet/:petId",
+                  "raw": "{{baseUrl}}/pet/{{petId}}",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
                     "pet",
-                    ":petId"
+                    "{{petId}}"
                   ],
                   "variable": [
                     {
@@ -286,13 +286,13 @@
                   ]
                 },
                 "url": {
-                  "raw": "{{baseUrl}}/pet/:petId",
+                  "raw": "{{baseUrl}}/pet/{{petId}}",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
                     "pet",
-                    ":petId"
+                    "{{petId}}"
                   ],
                   "variable": [
                     {
@@ -621,13 +621,13 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/pet/:petId",
+                  "raw": "{{baseUrl}}/pet/{{petId}}",
                   "host": [
                     "{{baseUrl}}"
                   ],
                   "path": [
                     "pet",
-                    ":petId"
+                    "{{petId}}"
                   ],
                   "variable": [
                     {
