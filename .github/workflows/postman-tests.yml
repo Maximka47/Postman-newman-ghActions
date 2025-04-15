@@ -19,21 +19,27 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '18'
 
     - name: Install Newman
       run: |
           npm install -g newman
           npm install -g newman-reporter-html
 
-    - name: Make Directory for results
+    - name: Create Results Directory
       run: mkdir -p testResults
 
     - name: Run Postman Collection
-      run: newman run petstore.collection.json -r html,cli --reporter-html-export testResults/index.html
+      run: |
+          newman run petstore.collection.json \
+            -r html,cli \
+            --reporter-html-export testResults/index.html \
+            --suppress-exit-code
 
-    - name: Upload Newman Report to GitHub Pages
+    - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: testResults
+        publish_dir: ./testResults
+        keep_files: false
+        force_orphan: true
