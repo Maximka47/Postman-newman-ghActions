@@ -22,13 +22,18 @@ jobs:
         node-version: '16'
 
     - name: Install Newman
-      run: npm install -g newman
+      run: |
+          npm install -g newman
+          npm install -g newman-reporter-htmlextra
+
+    - name: Make Directory for results
+      run: mkdir -p testResults
 
     - name: Run Postman Collection
-      run: newman run petstore.collection.json -r html,cli --reporter-html-export newman-report.html
+      run: petstore.collection.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport.html
 
     - name: Upload Newman Report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./newman-report.html
+        publish_dir: .testResults/runreport.html
