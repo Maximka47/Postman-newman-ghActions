@@ -30,7 +30,7 @@ jobs:
       run: mkdir -p testResults
 
     - name: Run Postman Collection
-      run: newman run petstore_fixed.collection.json -r html,cli --reporter-html-export testResults/runreport.html
+      run: newman run petstore_fixed.collection.json -r html,cli --reporter-html-export testResults/index.html
 
     - name: Upload Newman Report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
