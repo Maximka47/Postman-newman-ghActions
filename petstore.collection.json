@@ -34,11 +34,16 @@
               {
                 "key": "Content-Type",
                 "value": "application/json"
+              },
+              {
+                "key": "api_key",
+                "value": "special-key",
+                "type": "string"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"id\": 123, \"name\": \"Fluffy\", \"photoUrls\": [], \"status\": \"available\"}"
+              "raw": "{\"id\": 123, \"category\": {\"id\": 1, \"name\": \"dogs\"}, \"name\": \"Fluffy\", \"photoUrls\": [\"http://example.com/photo.jpg\"], \"tags\": [{\"id\": 1, \"name\": \"friendly\"}], \"status\": \"available\"}"
             },
             "url": {
               "raw": "{{baseUrl}}/pet",
@@ -294,7 +299,7 @@
               "variable": [
                 {
                   "key": "petId",
-                  "value": "1337",
+                  "value": "123",
                   "description": "(Required) ID of pet that needs to be updated"
                 }
               ]
@@ -640,7 +645,7 @@
               "variable": [
                 {
                   "key": "petId",
-                  "value": "321",
+                  "value": "123",
                   "description": "(Required) Pet id to delete"
                 }
               ]
