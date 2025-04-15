@@ -11,6 +11,48 @@
       "name": "pet",
       "item": [
         {
+          "name": "Create pet 123",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Pet created successfully\", function () {",
+                  "    pm.response.to.have.status(200);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"id\": 123, \"name\": \"Fluffy\", \"photoUrls\": [], \"status\": \"available\"}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/pet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "pet"
+              ]
+            },
+            "description": "Creates a test pet with ID 123"
+          }
+        },
+        {
           "name": "Find pet by ID",
           "event": [
             {
