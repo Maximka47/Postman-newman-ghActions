@@ -668,7 +668,7 @@
                   }
                 ],
                 "url": {
-                  "raw": "{{baseUrl}}/pet/:petId",
+                  "raw": "{{baseUrl}}/pet/{{petId}}",
                   "host": [
                     "{{baseUrl}}"
                   ],
